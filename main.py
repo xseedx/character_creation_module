@@ -1,7 +1,7 @@
 from random import randint
 
 
-def attack(char_name, char_class):
+def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         damage = 5 + randint(3, 5)
     elif char_class == 'mage':
@@ -14,7 +14,7 @@ def attack(char_name, char_class):
     return f'{char_name} нанёс урон противнику равный {damage}'
 
 
-def defence(char_name, char_class):
+def defence(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         damage = 10 + randint(5, 10)
     elif char_class == 'mage':
@@ -27,19 +27,17 @@ def defence(char_name, char_class):
     return (f'{char_name} блокировал {damage} урона')
 
 
-def special(char_name, char_class):
+def special(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         special = 'Выносливость 125'
     elif char_class == 'mage':
         special = 'Атака 45'
     elif char_class == 'healer':
         special = 'Защита 40'
-    else:
-        special = 0
     return (f'{char_name} применил специальное умение «{special}»')
 
 
-def start_training(char_name, char_class):
+def start_training(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -63,9 +61,9 @@ def start_training(char_name, char_class):
     return 'Тренировка окончена.'
 
 
-def choice_char_class():
+def choice_char_class() -> str:
     approve_choice = None
-    char_class = None
+    char_class = ''
 
     while approve_choice != 'y':
         char_class = input(
@@ -89,7 +87,7 @@ def choice_char_class():
     return char_class
 
 
-def main():
+def main() -> None:
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name = input('...назови себя: ')
